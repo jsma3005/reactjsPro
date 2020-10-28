@@ -6,7 +6,7 @@ import './custom.css'
 const App = () =>{
     return (
         <div className={cn(cls.header, 'color')}>
-            This is App Component! Hello, React!
+            This is App Component!
         </div>
     )
 }
