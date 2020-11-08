@@ -1,20 +1,18 @@
 import React from 'react';
-// import cn from 'classnames';
 import cls from './App.module.scss';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import HomePage from './pages/Home/Home';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import Pokedes from './pages/Pokedes/Pokedes';
 
 const App = () => {
-  console.log('Some log');
-
   return (
-        // <div className={cn(cls.header, 'color')}>Hello, ReactJS!</div>
         <>
-            <Header />
-                <div className={cls.mainContent}>
-                    <h1>MAIN</h1>
-                </div>
-            <Footer />
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/" component={HomePage} />
+                    <Route path="/pokedes" component={Pokedes} />
+                </Switch>
+            </BrowserRouter>
         </>
     );
 };
