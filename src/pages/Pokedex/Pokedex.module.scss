@@ -1,0 +1,9 @@
+@import "../../variables";
+
+.root{
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: linear-gradient(180deg, $third 0%, $primary 100%);
+}

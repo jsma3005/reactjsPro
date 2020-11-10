@@ -12,11 +12,11 @@ const HomePage = () =>{
             <Header />
             <Layout className={cls.contentWrap}>
                 <div className={cls.contentText}>
-                    <Heading>
+                    <Heading tag={1}>
                         <b>Find</b> all your favourite <b>Pokemon</b>
                     </Heading>
                     <p>You can know what the type Pokemon, its strengths, disadvantages and abilities</p>
-                    <Button style={{width: '50%', color: '#000', fontSize: '18px'}} onClick={() => console.log('Click Button')}>
+                    <Button style={{width: '50%', backgroundColor: '#73D677', fontSize: '18px'}} onClick={() => console.log('Click Button')}>
                         See pokemons
                     </Button>
                 </div>

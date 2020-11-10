@@ -5,7 +5,7 @@ interface ButtonProps{
     onClick: (event: React.MouseEvent<HTMLButtonElement>) => void
     style: {
         width: string,
-        color: string,
+        backgroundColor: string,
         fontSize: string
     }
 }
