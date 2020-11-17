@@ -5,5 +5,37 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background: linear-gradient(180deg, $third 0%, $primary 100%);
+    // background: linear-gradient(180deg, $third 0%, $primary 100%);
+    background: linear-gradient(180deg, #FFFFFF 30.32%, #F5F5F5 100%);
+}
+
+.title{
+    text-align: center;
+}
+.title h1{
+    font-weight: 100;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+// searchInput
+
+.search{
+    width: 100%;
+    padding: 20px;
+    outline: none;
+    border: none;
+    margin-bottom: 50px;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(33, 33, 33, 0.8);
+    background: #F2F2F2;
+    /* blur16 */
+    box-shadow: 4px 4px 16px rgba(1, 28, 64, 0.2);
+    border-radius: 40px;
 }

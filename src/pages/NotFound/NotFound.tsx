@@ -3,6 +3,7 @@ import React from 'react';
 import Button from '../../components/Button/Button';
 import cls from './NotFound.module.scss';
 import TeamRocket from './img/Team_Rocket_trio_OS 1.png';
+import { LinkEnum } from '../../route';
 
 const NotFound = () =>{
     return(
@@ -19,7 +20,7 @@ const NotFound = () =>{
                 </div>
                 <Button
                     style={{width: '231px', backgroundColor: '#F2CB07', fontSize: '18px'}}
-                    onClick={() => navigate('/')}
+                    onClick={() => navigate(LinkEnum.HOME)}
                 >
                     Return
                 </Button>

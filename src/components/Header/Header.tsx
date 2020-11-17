@@ -15,7 +15,8 @@ import cn from 'classnames';
 
 const Header = () =>{
     const path = usePath();
-    console.log(path);
+
+    console.log('Header');
     
 
     return(
@@ -28,7 +29,7 @@ const Header = () =>{
                     {
                         GENERAL_MENU.map(({title, link}) =>(
                             <A key={title} href={link} className={cn(cls.menuLink, {
-                                [cls.activeLink]: link === path,
+                                [cls.activeLink]: link === path
                             })}>{title}</A>
                         ))
                     }
@@ -39,4 +40,4 @@ const Header = () =>{
     )
 }
 
-export default Header;
+export default React.memo(Header);
