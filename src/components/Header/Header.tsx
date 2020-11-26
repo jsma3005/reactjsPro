@@ -1,37 +1,23 @@
 import React from 'react';
 import cls from './Header.module.scss';
 import {ReactComponent as PokemonLogo} from './assets/Group.svg';
+import { A, usePath } from 'hookrouter';
+import { GENERAL_MENU } from '../../route';
+import cn from 'classnames';
 
-interface IMenu {
-    id: number,
-    value: string,
-    link: string
-}
+// interface IMenu {
+//     id: number,
+//     value: string,
+//     link: string
+// }
+
+
 
 const Header = () =>{
+    const path = usePath();
 
-    const MENU: IMenu[] = [
-        {
-            id: 1,
-            value: 'Home',
-            link: '/'
-        },
-        {
-            id: 2,
-            value: 'Pokedex',
-            link: '/pokedes'
-        },
-        {
-            id: 3,
-            value: 'Legendaries',
-            link: '#'
-        },
-        {
-            id: 4,
-            value: 'Documentation',
-            link: '#'
-        }
-    ]
+    console.log('Header');
+    
 
     return(
         <div className={cls.root}>
@@ -41,8 +27,10 @@ const Header = () =>{
                 </div>
                 <div className={cls.menuWrap}>
                     {
-                        MENU.map(({value, link, id}) =>(
-                            <a key={id} href={link} className={cls.menuLink}>{value}</a>
+                        GENERAL_MENU.map(({title, link}) =>(
+                            <A key={title} href={link} className={cn(cls.menuLink, {
+                                [cls.activeLink]: link === path
+                            })}>{title}</A>
                         ))
                     }
                    
@@ -52,4 +40,4 @@ const Header = () =>{
     )
 }
 
-export default Header;
+export default React.memo(Header);

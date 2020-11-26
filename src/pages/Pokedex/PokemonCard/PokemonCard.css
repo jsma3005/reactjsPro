@@ -1,0 +1,21 @@
+
+
+.grass{
+    background: linear-gradient(270deg, #64D368 0.15%, #64D368 70.88%) !important;
+}
+
+.fire{
+    background: linear-gradient(270deg, #B33327 0.15%, #D93E30 100%);
+}
+
+.water{
+    background: linear-gradient(270deg, #5BC7FA 0.15%, #35BAFF 100%);
+}
+
+.normal{
+    background: linear-gradient(270deg, #F89EAE 0.15%, #F4B5C1 100%);
+}
+
+.electric{
+    background: linear-gradient(270deg, #F2CB07 0.15%, #F2B807 100%);
+}

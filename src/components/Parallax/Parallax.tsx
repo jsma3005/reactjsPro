@@ -13,8 +13,6 @@ const Parallax = () => {
     const [screenY, setScreenY] = useState(0);
 
     const handleMouseMove = (event: MouseEvent) => {
-        console.log(event.screenX);
-        console.log(event.screenY);
         setScreenX(event.screenX)
         setScreenY(event.screenY)
     }

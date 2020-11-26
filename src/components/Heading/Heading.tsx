@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Heading: React.ElementType = ({children}) =>{
-    return (
-        <>
-            {children}
-        </>
-    )
+interface HeadingProps {
+    tag: number
+}
+
+const Heading: React.FC<HeadingProps> = ({children, tag, ...props}) =>{
+    return React.createElement(`h${tag}`, props,children);
 }
 
 export default Heading;
