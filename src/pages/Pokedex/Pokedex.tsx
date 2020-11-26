@@ -1,25 +1,32 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Heading from '../../components/Heading/Heading';
 import Layout from '../../components/Layout/Layout';
 import PokemonCard from './PokemonCard/PokemonCard';
 import cls from './Pokedex.module.scss';
 import useData from '../../hook/getData';
+import { IPokemons } from '../../interface/pokemons';
+import useDebounce from '../../hook/useDebounce';
+
+interface IQuery{
+    name?: string
+}
 
 const PokedexPage = () => {
     const [searchValue, setSearchValue] = useState('');
-    const [query, setQuery] = useState({});
+    const [query, setQuery] = useState<IQuery>({});
+
+    const debouncedValue = useDebounce(searchValue, 500);
 
     const {
         data,
         isLoading,
         isError
-    } = useData('getPokemons', query, [searchValue]);
-    
+    } = useData<IPokemons>('getPokemons', query, [debouncedValue]);   
 
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
         setSearchValue(e.target.value);
-        setQuery(s => ({
-            ...s,
+        setQuery((state: IQuery) => ({
+            ...state,
             name: e.target.value
         }))
     }
@@ -33,7 +40,7 @@ const PokedexPage = () => {
             <Layout>
                 <div className={cls.title}>
                     <Heading tag={1}>
-                        {!isLoading && data.total} <b>Pokemons</b> for you to choose your favourite
+                        {!isLoading && data && data.total} <b>Pokemons</b> for you to choose your favourite
                     </Heading>
                     <div>
                         <input placeholder="Encuentra tu pokémon..." className={cls.search} type="text" value={searchValue} onChange={handleSearchChange} />
