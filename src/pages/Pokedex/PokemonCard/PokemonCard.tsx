@@ -2,6 +2,7 @@ import React from 'react';
 import Heading from '../../../components/Heading/Heading';
 import cls from './PokemonCard.module.scss';
 import './PokemonCard.css';
+import { PokemonsRequest } from '../../../interface/pokemons';
 
 
 const PokemonCard = (props: any) => {
@@ -9,7 +10,7 @@ const PokemonCard = (props: any) => {
     return (
         <>
             {
-                props.data.pokemons.map((item: any) => (
+                props.data.pokemons.map((item: PokemonsRequest) => (
                     <div key={item.name_clean} className={cls.root}>
                         <div className={cls.infoWrap}>
                             <Heading tag={1}>
